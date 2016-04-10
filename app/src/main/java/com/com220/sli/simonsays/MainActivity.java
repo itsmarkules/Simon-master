@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 public class MainActivity extends AppCompatActivity
 {
     Button topLeft;
@@ -43,12 +42,8 @@ public class MainActivity extends AppCompatActivity
 
     int scoreLevel = 0;
     int puzzlePiece = 0;
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-=======
     int tempUS = 0;
     int tempRS = 0;
-    int currScore = 0;
->>>>>>> Initial commit
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -96,10 +91,7 @@ public class MainActivity extends AppCompatActivity
                 userSequenceString.setLength(0);
                 textView.setText("Score: ");
                 start.setText("Start");
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-=======
                 keepGoing = true;
->>>>>>> Initial commit
 
                 long runtimeSequence = (numOfItems * 1000) + 500; //DYNAMIC RUNTIME LENGTH BASED ON THE NUMBER OF ITEMS
                 new CountDownTimer(runtimeSequence, 1000)
@@ -152,12 +144,8 @@ public class MainActivity extends AppCompatActivity
                 bottomLeft.clearAnimation();
                 bottomRight.clearAnimation();
                 int buttonNumber = 0;
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-                try {
-=======
                 try
                 {
->>>>>>> Initial commit
                     compareSequences(buttonNumber);
                 }
                 catch(IndexOutOfBoundsException e)
@@ -182,12 +170,8 @@ public class MainActivity extends AppCompatActivity
                 catch(IndexOutOfBoundsException e)
                 {
                     start.setText("topRight Error");
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-                }            }
-=======
                 }
             }
->>>>>>> Initial commit
         });
         bottomLeft.setOnClickListener(new View.OnClickListener()
         {
@@ -234,15 +218,6 @@ public class MainActivity extends AppCompatActivity
         if(gameStart == true)
         {
             userSequence.add(buttonNumber);
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-            userSequenceString.append(buttonNumber + "");
-            numUserInputs++;
-            textView.setText(userSequenceString.toString());
-        }
-        else    //User can click the buttons but no input occurs
-        {
-            topLeft.setText("1");
-=======
             if(randomSequence.get(numUserInputs).intValue() != buttonNumber)
             {
                 puzzlePiece = 0;
@@ -269,19 +244,13 @@ public class MainActivity extends AppCompatActivity
         else    //User can click the buttons but no input occurs
         {
             //start.setText("Play the game!");
->>>>>>> Initial commit
         }
         if(numUserInputs >= numOfItems)
         {
             for(int i = 0; i < numOfItems; i++)
             {
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-                int tempUS = userSequence.get(i).intValue();
-                int tempRS = randomSequence.get(i).intValue();
-=======
                 tempUS = userSequence.get(i).intValue();
                 tempRS = randomSequence.get(i).intValue();
->>>>>>> Initial commit
                 try
                 {
                     if(tempUS == tempRS)
@@ -289,44 +258,24 @@ public class MainActivity extends AppCompatActivity
                         puzzlePiece++;
                         if(puzzlePiece == numOfItems)
                         {
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-=======
                             puzzlePiece = 0;
->>>>>>> Initial commit
                             scoreLevel++;
                             randomSequence.clear();
                             randomSequenceString.setLength(0);
                             userSequence.clear();
                             userSequenceString.setLength(0);
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-                            //numOfItems++;
-                            numUserInputs = 0;
-=======
                             numUserInputs = 0;
                             numOfItems++;
->>>>>>> Initial commit
                             gameStart = false;
                             start.setText("Start Level: " + scoreLevel);
                             score.setText(0 + "");
                             textView.setText("Score: ");
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-                            puzzlePiece = 0;
-
-                        }
-
-                    }
-                    else
-                    {
-                        keepGoing = false;
-
-=======
                             break;
                         }
                     }
                     else
                     {
                         puzzlePiece = 0;
->>>>>>> Initial commit
                         randomSequence.clear();
                         randomSequenceString.setLength(0);
                         userSequence.clear();
@@ -338,10 +287,6 @@ public class MainActivity extends AppCompatActivity
                         start.setText("Start New Game");
                         score.setText(0 + "");
                         textView.setText("Score: ");
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-                        puzzlePiece = 0;
-=======
->>>>>>> Initial commit
                         break;
                     }
                 }
@@ -441,20 +386,12 @@ Runnable runnableOne = new Runnable() //PROBLEMS WITH THIS RUNNABLE, CAUSES A CR
                     public void onFinish()
                     {
                         start.setText("Start"); //No good. Cannot call on something created in the UI
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-
-=======
->>>>>>> Initial commit
                     }
                 }.start();
             }while(keepGoing == true);
         };
     };
     //Thread threadOne = new Thread(runnableOne); //USE WITH THE RUNNABLE ABOVE (THE RUNNABLE WHICH DOESN'T AS OF YET WORK)
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-
-=======
->>>>>>> Initial commit
  */
 
 /* THREADS USING ASYNCTASK
@@ -466,10 +403,6 @@ public class UserInputThread extends AsyncTask<Boolean,Void,Void>
         protected void onPreExecute() {
             super.onPreExecute();
         }
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-
-=======
->>>>>>> Initial commit
         @Override
         protected Void doInBackground(Boolean... params)
         {
@@ -506,29 +439,17 @@ public class UserInputThread extends AsyncTask<Boolean,Void,Void>
             }
             return null;
         }
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-
-=======
->>>>>>> Initial commit
         @Override
         protected void onProgressUpdate(Void... values)
         {
             super.onProgressUpdate(values);
         }
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-
-=======
->>>>>>> Initial commit
         @Override
         protected void onPostExecute(Void aVoid)
         {
             super.onPostExecute(aVoid);
         }
     }
-<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
-
-=======
->>>>>>> Initial commit
     //Thread threadOne = new Thread(runnableOne); //INVOKING CAUSES A PROGRAM CRASH
                 //threadOne.start(); //INVOKING CAUSES A PROGRAM CRASH
  */
