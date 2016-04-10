@@ -107,11 +107,15 @@
         android:layout_x="122dp"
         android:layout_y="357dp" />
 
+<<<<<<< bbb130d2cf724f0749054bf7293c6934beb0112f
     <Button
         android:layout_width="101dp"
         android:layout_height="wrap_content"
         android:id="@+id/test"
         android:layout_x="10dp"
         android:layout_y="111dp" />
+=======
+
+>>>>>>> Initial commit
 
 </AbsoluteLayout>
